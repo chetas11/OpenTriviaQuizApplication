@@ -52,18 +52,22 @@ goHome.addEventListener("click", function(){
 })
 
 saveScore.addEventListener("click", ()=>{
-    if(inputBox){
-    let userName = inputBox.value;
-    let scoredpoints = h2.innerText;
-    // localStorage.setItem("Username", userName);
-    // localStorage.setItem("Scored", scoredpoints); 
-    localStorage.setItem(userName,scoredpoints) 
-    location.href = "highscore.html";
-    }else{
-        inputBox.classList.add("error")
+    var Scores = JSON.parse(localStorage.getItem("AllScores"))
+    if(Scores === null){
+        Scores = [];
     }
+    
+    Scores.push({userName: inputBox.value, scoredpoints: h2.innerText});    
+    localStorage.setItem("AllScores", JSON.stringify(Scores)) 
+    location.href = "highscore.html";
 
+
+ 
 })
+
+
+
+
 
 
 

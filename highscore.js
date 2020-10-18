@@ -14,24 +14,24 @@ let h2 = document.createElement("h2")
 h2.innerText = "High Scores"
 Col.appendChild(h2)
 
-function createScores(i){
-    let h3 = document.createElement("h3")
-    h3.innerText = localStorage.key(i)
-    Col.appendChild(h3)
-}
+let HighScores = JSON.parse(localStorage.getItem("AllScores"));
+HighScores = HighScores.sort((a, b) => b.scoredpoints - a.scoredpoints);
 
-
+HighScores.forEach((user) => {
+   if(HighScores === null){
+        HighScores = [];
+    }
+    let DisplayScore = document.createElement("h6");
+    DisplayScore.classList.add("names")
+    DisplayScore.innerText = user.userName+" - "+user.scoredpoints;
+    Col.appendChild(DisplayScore);
+});
 
 let goHome = document.createElement("button")
 goHome.classList.add("btn","btn-primary")
 goHome.innerText = "Go Home"
 Col.appendChild(goHome)
 
-
 goHome.addEventListener("click", function(){
     location.href = "index.html";
 })
-
-for(i=0; i<localStorage.length; i++){
-    createScores(i);
-}

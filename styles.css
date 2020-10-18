@@ -1,5 +1,14 @@
+body {
+  font-family: "Ranchers", cursive;
+}
+
 .main {
   margin-top: 20vh;
+  position: relative;
+}
+
+.HomePage {
+  margin-top: 40vh;
   position: relative;
 }
 
@@ -7,6 +16,7 @@
   margin-top: 10px;
   display: block;
   width: 100%;
+  background-color: #41aea9;
 }
 
 .score {
@@ -21,25 +31,23 @@
   top: 50%;
 }
 
-/* .container {
-  display: flex;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  font-size: 1.8rem;
-  border: 0.1rem solid;
-  background-color: white;
-} */
-
 .choice-text {
   padding: 10px;
   width: 80%;
   border: 0.1rem solid;
 }
 
+.error {
+  border: 2px solid red;
+}
+
 /* .rightanswer {
   display: none;
 } */
 
-.error {
-  border: 2px solid red;
+.names {
+  color: teal;
+  border: 1px solid gray;
+  font-weight: bolder;
+  background-color: lightgrey;
 }

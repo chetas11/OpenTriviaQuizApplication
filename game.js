@@ -102,7 +102,7 @@ allAnswers.forEach(answer => {
     answer.addEventListener("click", e => {
         fetcher()
         if(correctAnswer.textContent === e.target.textContent){
-            Points.innerText = parseInt(Points.innerText) + 1
+            Points.innerText = parseInt(Points.innerText) + 10
         }
 
         if(count>10){
