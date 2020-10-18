@@ -106,6 +106,7 @@ allAnswers.forEach(answer => {
         }
 
         if(count>10){
+        sessionStorage.setItem("score", Points.innerText);
         location.replace("end.html")
         }
     })

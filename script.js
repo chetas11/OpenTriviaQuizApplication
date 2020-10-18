@@ -1,5 +1,5 @@
 let MainContainer = document.createElement("div");
-MainContainer.classList.add("container","text-center")
+MainContainer.classList.add("container","text-center", "main")
 document.body.appendChild(MainContainer)
 
 let Row = document.createElement("div");
