@@ -1,5 +1,6 @@
 body {
-  font-family: "Ranchers", Arial;
+  font-family: "Merriweather", serif;
+  font-weight: lighter;
 }
 
 .main {
@@ -10,6 +11,7 @@ body {
 .HomePage {
   margin-top: 40vh;
   position: relative;
+  font-family: "Ranchers", Arial;
 }
 
 .btn {
@@ -37,17 +39,21 @@ body {
   border: 0.1rem solid;
 }
 
+.choice-text:hover {
+  border: 5px solid #373a40;
+}
+
 .error {
   border: 2px solid red;
 }
-
-/* .rightanswer {
-  display: none;
-} */
 
 .names {
   color: teal;
   border: 1px solid gray;
   font-weight: bolder;
   background-color: lightgrey;
+}
+
+.correct {
+  background-color: lightgreen;
 }

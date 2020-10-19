@@ -54,10 +54,7 @@ Option4.innerText = "Answer";
 Option4.classList.add("choice-text")
 Container.appendChild(Option4)
 
-let Option5 = document.createElement("p");
-Option5.innerText = "";
-Option5.classList.add("rightanswer")
-Container.appendChild(Option5)
+
 
 
 let count = 1;
@@ -68,14 +65,13 @@ const fetcher = async () => {
         const data = await response.json()
         console.log(data.results)
             let i = 0;
-
+            
             function LoadData(i){
             Question.innerText = data.results[i].question
             TotalQuestions.innerText = "Questions "+count+"/10"
             AllOptions = document.querySelectorAll(".choice-text")
         
             let Correctanswer = data.results[i].correct_answer
-            Option5.innerText = Correctanswer
 
             answers = [Correctanswer, ...data.results[i].incorrect_answers]
         
@@ -83,26 +79,37 @@ const fetcher = async () => {
                 answers.sort();
                 AllOptions[j].innerText = answers[j]
              }
+
+
+            AllOptions.forEach(opt =>{
+                opt.classList.remove("correct")
+            })
+
+             count++
         }
 
         LoadData(i)
-        count++
+        
+        
+        
 
-        let allAnswers = document.querySelectorAll(".choice-text")
-
-        allAnswers.forEach(answer => {
-            let correctAnswer = Option5;
+        AllOptions.forEach(answer => {
             answer.addEventListener("click", e => {
-                i = i+1
-                LoadData(i);
-                if(correctAnswer.textContent === e.target.textContent){
-                    Points.innerText = parseInt(Points.innerText) + 10
+                let Rightanswer = data.results[i].correct_answer
+                if(Rightanswer == e.target.textContent){
+                    Points.innerText = parseInt(Points.innerText) + 10;
+                    e.target.classList.add("correct")
+                }else{
+
                 }
 
                 if(count>10){
                 sessionStorage.setItem("score", Points.innerText);
                 location.replace("end.html")
                 }
+
+                i = i+1
+                LoadData(i);
             })
         })
 
