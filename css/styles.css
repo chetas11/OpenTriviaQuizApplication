@@ -44,19 +44,11 @@ body {
   border: 5px solid #373a40;
 }
 
-.error {
-  border: 2px solid red;
-}
-
 .names {
   color: teal;
   border: 1px solid gray;
   font-weight: bolder;
   background-color: lightgrey;
-}
-
-.correct {
-  background-color: lightgreen;
 }
 
 @media screen and (max-width: 768px) {

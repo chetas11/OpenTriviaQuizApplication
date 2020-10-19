@@ -1,3 +1,5 @@
+// --------------------Design Part-------------------------------
+
 let MainContainer = document.createElement("div");
 MainContainer.classList.add("container","main","text-center");
 document.body.appendChild(MainContainer);
@@ -14,14 +16,14 @@ let h2 = document.createElement("h2")
 h2.innerText = "High Scores"
 Col.appendChild(h2)
 
-let HighScores = JSON.parse(localStorage.getItem("AllScores"));
-HighScores = HighScores.sort((a, b) => b.scoredpoints - a.scoredpoints);
+let HighScores = JSON.parse(localStorage.getItem("AllScores"));          // getting scores from local storage
+HighScores = HighScores.sort((a, b) => b.scoredpoints - a.scoredpoints); // sorting scores from highest to lowest  
 
-HighScores.forEach((user) => {
+HighScores.forEach((user) => {                        
    if(HighScores === null){
         HighScores = [];
     }
-    let DisplayScore = document.createElement("h6");
+    let DisplayScore = document.createElement("h6");    //Display Scores 
     DisplayScore.classList.add("names")
     DisplayScore.innerText = user.userName+" - "+user.scoredpoints;
     Col.appendChild(DisplayScore);

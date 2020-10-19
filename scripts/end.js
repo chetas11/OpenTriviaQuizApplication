@@ -1,3 +1,5 @@
+// --------------------Design Part-------------------------------
+
 let MainContainer = document.createElement("div");
 MainContainer.classList.add("container","main","text-center");
 document.body.appendChild(MainContainer);
@@ -10,9 +12,9 @@ let Col = document.createElement("div")
 Col.classList.add("col-lg-12", "col-md-12", "col-sm-6")
 Row.appendChild(Col)
 
-let h2 = document.createElement("h2")
-h2.innerText = "Score"
-Col.appendChild(h2)
+let Score = document.createElement("h2")
+Score.innerText = "Score"
+Col.appendChild(Score)
 
 let inputBox = document.createElement("input")
 inputBox.classList.add("form-group","text-center")
@@ -35,7 +37,7 @@ Col.appendChild(goHome)
 
 let ScoredPoints = sessionStorage.getItem("score");
 
-h2.innerText = ScoredPoints
+Score.innerText = ScoredPoints
 
 
 inputBox.addEventListener("input" , function(){
@@ -51,16 +53,18 @@ goHome.addEventListener("click", function(){
     location.href = "index.html";
 })
 
-saveScore.addEventListener("click", ()=>{
-    var Scores = JSON.parse(localStorage.getItem("AllScores"))
+saveScore.addEventListener("click", ()=>{                         // to store vaules in local storage
+    let Scores = JSON.parse(localStorage.getItem("AllScores"))
     if(Scores === null){
         Scores = [];
     }
-    
-    Scores.push({userName: inputBox.value, scoredpoints: h2.innerText});    
-    localStorage.setItem("AllScores", JSON.stringify(Scores)) 
+
+    Scores.push({userName: inputBox.value, scoredpoints: Score.innerText});    
+    localStorage.setItem("AllScores", JSON.stringify(Scores))  // storing data as string in local strage
     location.href = "highscore.html"; 
 })
+
+
 
 
 

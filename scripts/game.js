@@ -1,3 +1,6 @@
+
+// --------------------Design Part-------------------------------
+
 let MainContainer = document.createElement("div");
 MainContainer.classList.add("container","main");
 document.body.appendChild(MainContainer);
@@ -55,9 +58,9 @@ Option4.classList.add("choice-text")
 Container.appendChild(Option4)
 
 
+// --------------------------- Fetching API and Loading Questions/Answers---------------
 
-
-let count = 1;
+let count = 1;          // Counter to end the Quiz
 
 const fetcher = async () => {
     try{
@@ -65,8 +68,7 @@ const fetcher = async () => {
         const data = await response.json()
         console.log(data.results)
             let i = 0;
-            
-            function LoadData(i){
+            function LoadData(i){                           // Function to Load Questions and Answers
             Question.innerText = data.results[i].question
             TotalQuestions.innerText = "Questions "+count+"/10"
             AllOptions = document.querySelectorAll(".choice-text")
@@ -80,47 +82,36 @@ const fetcher = async () => {
                 AllOptions[j].innerText = answers[j]
              }
 
-
-            AllOptions.forEach(opt =>{
-                opt.classList.remove("correct")
-            })
-
              count++
         }
 
-        LoadData(i)
-        
-        
-        
+        LoadData(i)    // Loading Question for first Time
 
         AllOptions.forEach(answer => {
             answer.addEventListener("click", e => {
                 let Rightanswer = data.results[i].correct_answer
                 if(Rightanswer == e.target.textContent){
                     Points.innerText = parseInt(Points.innerText) + 10;
-                    e.target.classList.add("correct")
                 }else{
 
                 }
 
-                if(count>10){
+                if(count>10){                       // once counter complete load the scores and navigate to save scores
                 sessionStorage.setItem("score", Points.innerText);
                 location.replace("end.html")
                 }
 
                 i = i+1
-                LoadData(i);
+                LoadData(i);        // Loading new question once answers is clicked 
             })
         })
-
-
 
     }catch(e){
         console.log(e)
     }
 }
 
-fetcher();
+fetcher();              // Calling Fetcher to fetch the data
 
 
 

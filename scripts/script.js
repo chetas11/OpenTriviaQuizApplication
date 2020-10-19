@@ -1,3 +1,5 @@
+// --------------------Design Part-------------------------------
+
 let MainContainer = document.createElement("div");
 MainContainer.classList.add("container","text-center", "HomePage")
 document.body.appendChild(MainContainer)
@@ -33,7 +35,7 @@ Col.appendChild(PlayButton)
 Col.appendChild(HighScore)
 
 
-PlayButton.addEventListener("click", function(){
+PlayButton.addEventListener("click", function(){  
     location.href = "game.html";
 })
 
