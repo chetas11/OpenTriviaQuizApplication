@@ -66,8 +66,10 @@ const fetcher = async () => {
     try{
         const response = await fetch("https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple")
         const data = await response.json()
+        console.log(data.results)
+            let i = 0;
 
-        for(let i=0; i<data.results.length; i++){
+            function LoadData(i){
             Question.innerText = data.results[i].question
             TotalQuestions.innerText = "Questions "+count+"/10"
             AllOptions = document.querySelectorAll(".choice-text")
@@ -81,10 +83,28 @@ const fetcher = async () => {
                 answers.sort();
                 AllOptions[j].innerText = answers[j]
              }
-        
         }
 
+        LoadData(i)
         count++
+
+        let allAnswers = document.querySelectorAll(".choice-text")
+
+        allAnswers.forEach(answer => {
+            let correctAnswer = Option5;
+            answer.addEventListener("click", e => {
+                i = i+1
+                LoadData(i);
+                if(correctAnswer.textContent === e.target.textContent){
+                    Points.innerText = parseInt(Points.innerText) + 10
+                }
+
+                if(count>10){
+                sessionStorage.setItem("score", Points.innerText);
+                location.replace("end.html")
+                }
+            })
+        })
 
 
 
@@ -95,22 +115,7 @@ const fetcher = async () => {
 
 fetcher();
 
-let allAnswers = document.querySelectorAll(".choice-text")
 
-allAnswers.forEach(answer => {
-    let correctAnswer = Option5;
-    answer.addEventListener("click", e => {
-        fetcher()
-        if(correctAnswer.textContent === e.target.textContent){
-            Points.innerText = parseInt(Points.innerText) + 10
-        }
-
-        if(count>10){
-        sessionStorage.setItem("score", Points.innerText);
-        location.replace("end.html")
-        }
-    })
-})
 
 
 
