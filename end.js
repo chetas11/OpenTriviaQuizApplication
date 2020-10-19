@@ -59,10 +59,7 @@ saveScore.addEventListener("click", ()=>{
     
     Scores.push({userName: inputBox.value, scoredpoints: h2.innerText});    
     localStorage.setItem("AllScores", JSON.stringify(Scores)) 
-    location.href = "highscore.html";
-
-
- 
+    location.href = "highscore.html"; 
 })
 
 

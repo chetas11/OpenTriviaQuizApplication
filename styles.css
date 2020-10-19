@@ -31,6 +31,7 @@ body {
   position: absolute;
   right: 16%;
   top: 50%;
+  font-size: 1.5rem;
 }
 
 .choice-text {
