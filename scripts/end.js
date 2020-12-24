@@ -21,17 +21,17 @@ inputBox.classList.add("form-group","text-center")
 Col.appendChild(inputBox)
 
 let saveScore = document.createElement("button")
-saveScore.classList.add("btn","btn-primary","disabled")
+saveScore.classList.add("btn","btn-dark","disabled")
 saveScore.innerText = "Save"
 Col.appendChild(saveScore)
 
 let playAgain = document.createElement("button")
-playAgain.classList.add("btn","btn-primary")
+playAgain.classList.add("btn","btn-dark")
 playAgain.innerText = "Play Again"
 Col.appendChild(playAgain)
 
 let goHome = document.createElement("button")
-goHome.classList.add("btn","btn-primary")
+goHome.classList.add("btn","btn-dark")
 goHome.innerText = "Go Home"
 Col.appendChild(goHome)
 

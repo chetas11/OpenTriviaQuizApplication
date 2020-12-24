@@ -18,14 +18,14 @@ TopHeading.classList.add()
 MainContainer.append(TopHeading)
 
 let PlayButton = document.createElement("button")
-PlayButton.classList.add("btn","btn-primary")
+PlayButton.classList.add("btn","btn-dark")
 PlayButton.innerText = "Play"
 PlayButton.setAttribute("name","play")
 PlayButton.setAttribute("id","play")
 
 
 let HighScore = document.createElement("button")
-HighScore.classList.add("btn","btn-primary")
+HighScore.classList.add("btn","btn-dark")
 HighScore.setAttribute("name","highScores")
 HighScore.setAttribute("id","highScores")
 HighScore.innerText = "High Score"
@@ -33,7 +33,6 @@ HighScore.innerText = "High Score"
 Col.appendChild(TopHeading)
 Col.appendChild(PlayButton)
 Col.appendChild(HighScore)
-
 
 PlayButton.addEventListener("click", function(){  
     location.href = "game.html";

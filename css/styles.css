@@ -1,6 +1,8 @@
 body {
   font-family: "Merriweather", serif;
   font-weight: lighter;
+  background-image: url("../back.jpg");
+  color: #0f3057;
 }
 
 .main {
@@ -9,7 +11,7 @@ body {
 }
 
 .HomePage {
-  margin-top: 40vh;
+  margin-top: 32vh;
   position: relative;
   font-family: "Ranchers", Arial;
 }
@@ -18,7 +20,6 @@ body {
   margin-top: 10px;
   display: block;
   width: 100%;
-  background-color: #41aea9;
 }
 
 .score {
@@ -38,10 +39,11 @@ body {
   padding: 10px;
   width: 80%;
   border: 0.1rem solid;
+  cursor: pointer;  
 }
 
 .choice-text:hover {
-  border: 5px solid #373a40;
+  border: 5px solid #0f3057;
 }
 
 .names {

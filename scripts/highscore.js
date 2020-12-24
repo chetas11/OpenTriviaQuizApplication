@@ -30,7 +30,7 @@ HighScores.forEach((user) => {
 });
 
 let goHome = document.createElement("button")
-goHome.classList.add("btn","btn-primary")
+goHome.classList.add("btn","btn-dark")
 goHome.innerText = "Go Home"
 Col.appendChild(goHome)
 
