@@ -2,7 +2,7 @@
 
 #### Description - Simple Quiz App consists of 10 questions each consists of 10 points also Calculates the score at end and saves in local storage.
 
-#### Check out the working example: https://zomato-clone-chetas11.netlify.app/
+#### Check out the working example: https://quick-quiz-app786.netlify.app
 
 #### Programming languages used 
 - HTML
